@@ -7,6 +7,18 @@
 	<body>
 		<h3>Hello from Go!</h3>
 
-		<h5>Cookie Value: {{.}}</h5>
+		<h5>Session Cookie Value: {{.Session}}</h5>
+
+		<h5>Files:</h5>
+		<ol>
+			{{range .Files}}
+			<li>{{.}}</li>
+			{{end}}
+		</ol>
+
+		<form method="post" enctype="multipart/form-data">
+			<input type="file" name="nf"/>
+			<input type="submit"/>
+		</form>
 	</body>
 </html>
